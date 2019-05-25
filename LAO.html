@@ -3,10 +3,15 @@
     <script type="text/javascript">
    
         // Challenge 1
-        // Promise wrapping asynchronous operation, Promise status pending
-        // Asynchronous operation completion,resolve function Make Promise objects from pending to fulfilled, eject function Make Promise objects from pending to rejected
-        // The callback functions of resolve state by the then method,The callback functions of rejected state by the catch method
+        // Promise wraps asynchronous operation, Promise status pending
+        // Asynchronous operation completion,resolve function make Promise objects from pending to fulfilled, eject function make //Promise objects from pending to rejected
+        // The callback functions of resolve is stated by the then method,The callback functions of rejected is stated by the catch method
         
+		//The Promise object wraps an asynchronous operation. The Promise object has three states: pending (initial state) fulfilled //(when the asynchronous execution succeeds, the Promise object is told by the asynchronous operation), rejected (asynchronous //execution fails, and the Promise object is told by the asynchronous operation).
+
+//Promise objects, which can be chained, register asynchronous execution state functions. Then is the callback corresponding to the fulfilled state, and the catch corresponds to the callback in the rejected state.
+
+//In the asynchronous function, how to tell the Promise object about the execution state transition? The two functions passed into the Promise object, resolve and eject, the parameters are the returned data (this data will be passed to the callback function mentioned above). Resolve corresponds to the fulfilled state, eject corresponds to the rejected state
         function compute() {
             return new Promise( function(resolve, eject) {
                 setTimeout( function(err, res) {
